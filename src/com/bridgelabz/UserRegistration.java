@@ -1,27 +1,31 @@
 package com.bridgelabz;
 
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter password minimum 8 characters : ");
+        UserRegistrationFunctions functions = new UserRegistrationFunctions();
+
+        System.out.print("Enter First name  : ");
+        String firstName = scanner.nextLine();
+        functions.checkFirstName(firstName);
+
+        System.out.print("Enter last name : ");
+        String lastName = scanner.nextLine();
+        functions.checkLastName(lastName);
+
+        System.out.print("Enter Email Id : ");
+        String email = scanner.nextLine();
+        functions.checkEmail(email);
+
+        System.out.print("Enter Mobile no : ");
+        String mobileNum = scanner.nextLine();
+        functions.checkMobileNumber(mobileNum);
+
+        System.out.println("Enter Password minimum 8 characters (Upper case, lower case,numbers and special characters) :");
         String password = scanner.nextLine();
-        checkPasswordRuleNoFour(password);
-    }
+        functions.checkPassword(password);
 
-    private static void checkPasswordRuleNoFour(String mobilNum) {
-        String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[*.!@#$%^&(){}:;<>?/~_+-=|\\]]).{8,}";
-
-        Pattern patternCheck = Pattern.compile(regex);
-        Matcher matcherCheck = patternCheck.matcher(mobilNum);
-
-        if (matcherCheck.matches()) {
-            System.out.println("Valid Password");
-        } else {
-            System.out.println("Invalid Password");
-        }
     }
 }
