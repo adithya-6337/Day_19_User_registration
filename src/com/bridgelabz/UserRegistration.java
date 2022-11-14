@@ -7,21 +7,21 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter First name : ");
-        String firstName = scanner.nextLine();
-        checkFirstName(firstName);
+        System.out.print("Enter last name : ");
+        String lastName = scanner.nextLine();
+        checkLastName(lastName);
     }
 
-    private static void checkFirstName(String firstName) {
+    private static void checkLastName(String lastName) {
         String regex = "^[A-Z]+[a-zA-Z]{2,}[0-9]*$";
 
         Pattern patternCheck = Pattern.compile(regex);
-        Matcher matcherCheck = patternCheck.matcher(firstName);
+        Matcher matcherCheck = patternCheck.matcher(lastName);
 
         if (matcherCheck.matches()) {
-            System.out.println("First name is valid");
+            System.out.println("Last name is valid");
         } else {
-            System.out.println("First name is invalid");
+            System.out.println("Last name is invalid");
         }
     }
 }
