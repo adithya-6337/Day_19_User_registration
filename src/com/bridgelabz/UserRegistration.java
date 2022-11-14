@@ -9,11 +9,11 @@ public class UserRegistration {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter password minimum 8 characters : ");
         String password = scanner.nextLine();
-        checkPasswordRuleOne(password);
+        checkPasswordRuleNoSecond(password);
     }
 
-    private static void checkPasswordRuleOne(String mobilNum) {
-        String regex = "^[a-zA-Z]{8,}";
+    private static void checkPasswordRuleNoSecond(String mobilNum) {
+        String regex = "^(?=.*[A-Z])(?=.*[a-z]).{8,}";
 
         Pattern patternCheck = Pattern.compile(regex);
         Matcher matcherCheck = patternCheck.matcher(mobilNum);
