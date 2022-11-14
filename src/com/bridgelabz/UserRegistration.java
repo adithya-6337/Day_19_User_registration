@@ -23,7 +23,7 @@ public class UserRegistration {
         String mobileNum = scanner.nextLine();
         functions.checkMobileNumber(mobileNum);
 
-        System.out.println("Enter Password minimum 8 characters (Upper case, lower case,numbers and special characters) :");
+        System.out.println("Enter Password minimum 8 characters :");
         String password = scanner.nextLine();
         functions.checkPassword(password);
 
