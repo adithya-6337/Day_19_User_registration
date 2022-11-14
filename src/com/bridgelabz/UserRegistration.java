@@ -7,20 +7,21 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter Email Id : ");
-        String email = scanner.nextLine();
-        checkEmail(email);
+        System.out.print("Enter Mobile no : ");
+        String mobileNum = scanner.nextLine();
+        checkMobileNumber(mobileNum);
     }
 
-    private static void checkEmail(String emailId) {        String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]+)?(@[a-z0-9]+)([.][a-z]{2,4})([.][a-z]{2})?$";
+    private static void checkMobileNumber(String mobilNum) {
+        String regex = "^[0-9]{2}+[ ][0-9]{10}$";
 
         Pattern patternCheck = Pattern.compile(regex);
-        Matcher matcherCheck = patternCheck.matcher(emailId);
+        Matcher matcherCheck = patternCheck.matcher(mobilNum);
 
         if (matcherCheck.matches()) {
-            System.out.println("Valid Email");
+            System.out.println("Valid Mobile Number");
         } else {
-            System.out.println("Invalid Email");
+            System.out.println("Invalid Mobile Number");
         }
     }
 }
